@@ -15,6 +15,7 @@ class CustomerReading extends JsonResource {
         return [
             'id'       => $this->id,
             'customer' => $this->customer->name,
+            'erp_customer_id' => $this->erp_id,
             'period'   => $this->reading_period->name,
             'status'   => $this->status,
         ];

@@ -14,7 +14,7 @@ class Customer extends JsonResource {
     public function toArray($request) {
         return [
             'id'   => $this->id,
-            'erp_id' => $this->erp_id,
+            'erp_customer_id' => $this->erp_id,
             'name' => $this->name,
         ];
     }
