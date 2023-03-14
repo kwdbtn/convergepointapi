@@ -38,3 +38,7 @@ Route::get('periods', [ReadingPeriodController::class, 'index']);
 
 // List a single reading for a single customer
 Route::get('readings/{customer}/{period}', [CustomerReadingController::class, 'status']);
+
+Route::get('readings/status/{customer}/{period}', [CustomerReadingController::class, 'periodStatus']);
+
+Route::get('readings/status/{customer}/{month}/{year}', [CustomerReadingController::class, 'monthYearStatus']);
