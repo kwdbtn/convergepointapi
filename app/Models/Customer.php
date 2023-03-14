@@ -29,6 +29,7 @@ class Customer extends Model {
 
     protected $fillable = [
         'name',
+        'erp_id',
         'active',
     ];
 
