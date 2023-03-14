@@ -49,6 +49,10 @@ class CustomerController extends Controller {
         return CustomerResource::make($customer);
     }
 
+    public function showERPCustomer($customer) {
+        $customerResult = Customer::where('erp_id', $customer)->first();
+        return CustomerResource::make($customerResult);
+    }
     /**
      * Show the form for editing the specified resource.
      *

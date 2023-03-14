@@ -24,6 +24,12 @@ class CustomerReadingController extends Controller {
         return CustomerReadingResource::collection($readings);
     }
 
+    public function getERPCustomerReadings($customer) {
+        $customerResult = Customer::where('erp_id', $customer)->first();
+        $readings = CustomerReading::where('customer_id', $customerResult->id)->get();
+        return CustomerReadingResource::collection($readings);
+    }
+
     public function status(Customer $customer, ReadingPeriod $period) {
         $reading = CustomerReading::where('customer_id', $customer->id)
             ->where('reading_period_id', $period->id)
